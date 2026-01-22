@@ -4,8 +4,12 @@ Changelog
 Next release
 --------------
 
+
 v3.5.0 - 2026-01-15
 -------------------
+
+- Fix #4609: Handle NuGet license file references properly. Added license_file_references
+  field to PackageData model to store file paths from <license type="file"> elements.
 
 - Improve package scan performance by:
 

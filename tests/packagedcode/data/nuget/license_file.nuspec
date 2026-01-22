@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Test.Package</id>
+        <version>1.0.0</version>
+        <authors>Tester</authors>
+        <description>Test package with license file</description>
+        <license type="file">LICENSE.txt</license>
+    </metadata>
+</package>

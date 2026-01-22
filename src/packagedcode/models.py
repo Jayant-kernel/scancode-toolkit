@@ -672,6 +672,13 @@ class PackageData(IdentifiablePackageData):
              'package manifest and extracted. This can be a string, a list or dict of '
              'strings possibly nested, as found originally in the manifest.')
 
+    license_file_references = attr.ib(
+        default=attr.Factory(list),
+        metadata=dict(
+            help='List of file paths to license files referenced in a package manifest.'
+        )
+    )
+
     notice_text = String(
         label='notice text',
         help='A notice text for this package.')

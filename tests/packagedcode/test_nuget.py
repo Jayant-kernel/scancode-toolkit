@@ -14,6 +14,7 @@ from packages_test_utils import PackageTester
 from scancode_config import REGEN_TEST_FIXTURES
 
 
+
 class TestNuget(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -72,3 +73,10 @@ class TestNuget(PackageTester):
     def test_package_lock_json_is_package_data_file(self):
         test_file = self.get_test_loc('nuget/packages.lock.json')
         assert nuget.NugetPackagesLockHandler.is_datafile(test_file)
+
+    def test_parse_creates_package_with_license_file(self):
+        test_file = self.get_test_loc('nuget/license_file.nuspec')
+        package = nuget.NugetNuspecHandler.parse(test_file)
+        package = list(package)[0]
+        assert package.extracted_license_statement == 'file:LICENSE.txt'
+        assert package.license_file_references == ['LICENSE.txt']
